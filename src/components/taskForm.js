@@ -12,6 +12,7 @@ const TaskForm = (props) => {
       status: false
     }
   );
+  const [resetFlat, setResetFlat] = useState(0);
 
   useEffect(()=>{
     if(props.selectedItem && props.selectedItem.id !== null){
@@ -45,8 +46,9 @@ const TaskForm = (props) => {
       let newID = Randomstring.generate();
       setTask(Object.assign(task, {id: newID}));
       props.onAddTask(task);
+    } else {
+      props.onUpdateTask(task);
     }
-    props.onUpdateTask(task);
     handleCancel();
   };
 

@@ -26,10 +26,9 @@ const handleSwitchStatus = (tasks, task) => {
 };
 
 const handleUpdateTask = (tasks ,task) => {
-    let boolValue = task?.status === 'true' ? true : false;
     let editId = task.id;
     let updateList = tasks.map(item =>
-      (item.id === editId ? { ...item, name: task.name, status: boolValue } : item)
+      (item.id === editId ? { ...item, name: task.name, status: task.status } : item)
     );
     return updateList;
 };
