@@ -115,3 +115,28 @@
   margin: 0px 0px 0px 10px;
   display: inline-block;
 }
+
+.pagination {
+  float: right;
+}
+.pagination li {
+  background: #36caa5;
+  padding: 5px 5px;
+}
+.pagination li a {
+  color: #b11f1f;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cv-action-icon a {
+  margin: 4px;
+}
+
+.cv-action-icon .fa {
+  font-size: 17px;
+}
+
+.cv-image-padding {
+  padding: 0 12%;
+}

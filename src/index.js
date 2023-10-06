@@ -9,6 +9,8 @@ import myReducers from './reducers/index';
 import { Provider } from 'react-redux';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import apolloClient from './apollo/apolloClient';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import 'font-awesome/css/font-awesome.min.css';
 const store = createStore(myReducers);
 
 ReactDOM.render(

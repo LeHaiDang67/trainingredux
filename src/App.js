@@ -9,7 +9,7 @@ import TaskForm from './components/taskForm';
 import { connect } from 'react-redux';
 import * as actions from './actions/index';
 import AnimeList from './components/animeList';
-
+import 'font-awesome/css/font-awesome.min.css';
 
 let initialState = [
   {
