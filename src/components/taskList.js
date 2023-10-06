@@ -9,7 +9,6 @@ const TaskList = (props) => {
     const [resetFlat, setResetFlat] = useState(0);
     const [filterItem, setFilterItem] = useState('All');
     let taskList = props.tasks;
-
     useEffect(() => {
     }, [props.tasks, resetFlat, props.filterStatusFromSort, props.sortValue, props.searchTask]);
 

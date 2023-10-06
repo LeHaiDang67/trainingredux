@@ -6,8 +6,19 @@ import TaskList from './components/taskList';
 import Search from './components/search';
 import Sort from './components/sort';
 import TaskForm from './components/taskForm';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import * as actions from './actions/index';
+import AnimeList from './components/animeList';
+
+
+let initialState = [
+  {
+    id: '1',
+    name: 'Học lập trình',
+    status: true
+  }
+];
+localStorage.setItem("tasks", JSON.stringify(initialState));
 
 function App(props) {
   return (
@@ -16,7 +27,7 @@ function App(props) {
         Quản lý công việc
       </div>
       <Row className="">
-        {props.isDisplayForm ? (<TaskForm/>) : ''}
+        {props.isDisplayForm ? (<TaskForm />) : ''}
         <Col className={props.isDisplayForm ? `col-xs-12 col-sm-12 col-md-8 col-lg-8` : `col-xs-12 col-sm-12 col-md-12 col-lg-12`}>
           <div className="action-box">
             <div className="header-action-box">
@@ -28,16 +39,17 @@ function App(props) {
               <Col className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                 <Row>
                   <Col className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                    <Search/>
+                    <Search />
                   </Col>
                   <Col className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <Sort/>
+                    <Sort />
                   </Col>
                 </Row>
               </Col>
             </Row>
             <br />
-            <TaskList/>
+            <TaskList />
+            <AnimeList/>
           </div>
         </Col>
       </Row>
@@ -45,16 +57,16 @@ function App(props) {
   );
 };
 
-const mapStateToProps = (state) =>{
+const mapStateToProps = (state) => {
   return {
     isDisplayForm: state.isDisplayForm,
     listData: state.tasks
   };
 };
 
-const mapDispatchToProps = (dispatch, props) =>{
+const mapDispatchToProps = (dispatch, props) => {
   return {
-    onToggleForm : ()=>{
+    onToggleForm: () => {
       dispatch(actions.toggleForm());
     },
   };

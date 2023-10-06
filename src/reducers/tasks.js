@@ -39,6 +39,7 @@ const tasksReducer = (state = initialState, action) =>{
         case types.LIST_ALL:
             return state;
         case types.ADD_TASK:
+            console.log(action.task);
             let addData = handleCreateTask(JSON.parse(localStorage.getItem('tasks')), action.task);
             localStorage.setItem('tasks', JSON.stringify(addData));
             return addData;
